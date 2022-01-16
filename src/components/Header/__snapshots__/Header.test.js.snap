@@ -2,8 +2,9 @@
 
 exports[`<Header/> matches snapshot 1`] = `
 <header>
-  <div
+  <a
     className="title"
+    href="."
   >
     <img
       alt="logo"
@@ -13,7 +14,7 @@ exports[`<Header/> matches snapshot 1`] = `
     <h1>
       GPA Calculator
     </h1>
-  </div>
+  </a>
   <nav>
     <a
       href="."
@@ -31,6 +32,7 @@ exports[`<Header/> matches snapshot 1`] = `
       Contact
     </a>
     <a
+      className="button-primary"
       href="."
     >
       Calculator
