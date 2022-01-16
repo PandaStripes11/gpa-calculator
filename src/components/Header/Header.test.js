@@ -1,13 +1,31 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+
 import Header from "./Header";
+import logoImage from '@assets/logo.svg';
 
 describe("<Header/>", () => {
-    const header = shallow(<Header/>)
+    test('matches snapshot', () => {
+        const component = renderer.create(<Header/>);
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    const header = shallow(<Header/>);
     test('has title of GPA Calculator', () => {
-        expect(header.find('#title').text()).toEqual('GPA Calculator');
+        expect(header.find('.title').text()).toEqual('GPA Calculator');
     });
-    test('renders a .logo', () => {
-        expect(header.find('.logo').exists()).toBeTruthy();
-    });
+    describe("has a logo", () => {
+        const logo = header.find('.logo');
+        test('renders an image with .logo className', () => {
+            expect(logo.exists()).toBeTruthy();
+        });
+        test('has an alt attribute', () => {
+            expect(logo.prop('alt')).toEqual('logo');
+        });
+        test('has the correct logo', () => {
+            expect(logo.prop('src')).toEqual(logoImage);
+        });
+    }); 
 });
