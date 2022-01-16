@@ -1,6 +1,39 @@
-.header {
+$header-margin: 3vw;
+
+header {
     width: 100vw;
     height: 12vh;
     min-height: 75px;
-    background-color: $header-color;
+    background: $header-background-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0px 1px 35px 20px $header-background-color;
+
+    .title {
+        width: 20%;
+        min-width: 300px;
+        height: 100%;
+        margin-left: $header-margin;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            height: 55%;
+        }
+    }
+
+    nav {
+        height: 100%;
+        width: 45%;
+        margin-right: $header-margin;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

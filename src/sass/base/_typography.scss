@@ -1,0 +1,61 @@
+// Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+// Merriweather
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+h1 {
+    font-weight: 800;
+    font-family: 'Open Sans';
+    color: $title-color;
+}
+
+p {
+    font-weight: 300;
+    font-family: 'Merriweather';
+}
+
+/* Links */
+a {
+    color: $link-color;
+    font-family: 'Open Sans';
+    position: relative;
+    text-decoration: none;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $link-color;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+        color: $link-color;
+        @include scale-underline;
+    }
+    &:focus {
+        outline: none;
+        @include scale-underline;
+    }
+}
+nav {
+    a {
+        font-weight: 300;
+        font-size: 1.4em;
+        position: relative;
+        color: $nav-link-color;
+        transition: all 0.3s ease-in-out;
+        &::before {
+            color: $nav-link-color;
+        }
+        &:hover {
+            color: lighten($link-color, 10%);
+            &::before {
+                color: $link-color;
+            }
+        }
+    }
+}

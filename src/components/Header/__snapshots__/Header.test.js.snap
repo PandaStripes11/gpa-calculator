@@ -1,18 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header/> matches snapshot 1`] = `
-<div
-  className="header"
->
-  <img
-    alt="logo"
-    className="logo"
-    src="logo.svg"
-  />
-  <h1
+<header>
+  <div
     className="title"
   >
-    GPA Calculator
-  </h1>
-</div>
+    <img
+      alt="logo"
+      className="logo"
+      src="logo.svg"
+    />
+    <h1>
+      GPA Calculator
+    </h1>
+  </div>
+  <nav>
+    <a
+      href="."
+    >
+      Home
+    </a>
+    <a
+      href="."
+    >
+      About
+    </a>
+    <a
+      href="."
+    >
+      Contact
+    </a>
+    <a
+      href="."
+    >
+      Calculator
+    </a>
+  </nav>
+</header>
 `;

@@ -16,7 +16,7 @@ describe("<Header/>", () => {
     test('has title of GPA Calculator', () => {
         expect(header.find('.title').text()).toEqual('GPA Calculator');
     });
-    describe("has a logo", () => {
+    describe("logo", () => {
         const logo = header.find('.logo');
         test('renders an image with .logo className', () => {
             expect(logo.exists()).toBeTruthy();
@@ -24,8 +24,14 @@ describe("<Header/>", () => {
         test('has an alt attribute', () => {
             expect(logo.prop('alt')).toEqual('logo');
         });
-        test('has the correct logo', () => {
+        test('uses the logo.svg', () => {
             expect(logo.prop('src')).toEqual(logoImage);
         });
     }); 
+    describe("navigation", () => {
+        const navigation = header.find('nav');
+        test("has four links", () => {
+            expect(navigation.children()).toHaveLength(4);
+        });
+    });
 });

@@ -1,0 +1,13 @@
+.button-primary {
+    background-color: $button-background;
+    padding: 15px;
+    border-radius: 35px;
+    font-weight: 900;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        @include reverse-color;
+    }
+    &:focus {
+        @include reverse-color;
+    }
+}
