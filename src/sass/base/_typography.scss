@@ -41,21 +41,3 @@ a {
         @include scale-underline;
     }
 }
-nav {
-    a {
-        font-weight: 300;
-        font-size: 1.4em;
-        position: relative;
-        color: $nav-link-color;
-        transition: all 0.3s ease-in-out;
-        &::before {
-            color: $nav-link-color;
-        }
-        &:hover {
-            color: lighten($link-color, 10%);
-            &::before {
-                color: $link-color;
-            }
-        }
-    }
-}
