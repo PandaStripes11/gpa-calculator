@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Hamburger from './Hamburger/Hamburger';
+import Navigation from './Navigation/Navigation';
 import logo from '@assets/logo.svg';
 
 function Header() {
@@ -9,12 +11,8 @@ function Header() {
                 <img className="logo" src={logo} alt="logo"/>
                 <h1>GPA Calculator</h1>
             </a>
-            <nav>
-                <a href='.'>Home</a>
-                <a href='.'>About</a>
-                <a href='.'>Contact</a>
-                <a href='.' className='button-primary'>Calculator</a>
-            </nav>
+            <Hamburger/>
+            <Navigation/>
         </header>
     )
 }

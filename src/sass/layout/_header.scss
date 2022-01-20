@@ -35,6 +35,7 @@ header {
     nav {
         height: 100%;
         width: 40%;
+        min-width: 620px;
         margin-right: $header-margin;
 
         display: flex;
@@ -67,6 +68,71 @@ header {
                 left: 0;
                 width: 100%;
             }
+        }
+    }
+
+    .hamburger-menu-container {
+        width: 60px;
+        height: 40px;
+        margin-right: $header-margin;
+        display: none;
+        transition: all 0.5s ease-in-out;
+        .hamburger-menu {
+            position: relative;
+            width: 50px;
+            height: 2px;
+            background-color: $title-color;
+            border-radius: 25px;
+            transition: all 0.5s ease-in;
+            pointer-events: none;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                height: inherit;
+                width: inherit;   
+                background-color: $title-color;
+                color: $title-color;
+                border-radius: inherit;
+                transition: all 0.5s ease-in;
+                transform: rotate(0deg);
+                z-index: inherit;
+            }
+            &::before {
+                transform: translateY(15px);
+            }
+            &::after {
+                transform: translateY(-15px);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .hamburger-menu-container.active {
+        transform: rotate(360deg);
+        .hamburger-menu {
+            background-color: transparent;
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+
+        nav {
+            display: none;
+        }
+
+        .hamburger-menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
