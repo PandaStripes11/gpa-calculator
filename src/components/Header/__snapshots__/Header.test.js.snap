@@ -15,6 +15,14 @@ exports[`<Header/> matches snapshot 1`] = `
       GPA Calculator
     </h1>
   </a>
+  <div
+    className="hamburger-menu-container"
+    onClick={[Function]}
+  >
+    <div
+      className="hamburger-menu"
+    />
+  </div>
   <nav>
     <a
       href="."
